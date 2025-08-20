@@ -2,14 +2,16 @@
 
 🚀 Diseñar e implementar una aplicación web básica que permita gestionar información de un sistema académico simulado, integrando una interfaz web interactiva construida con HTML, CSS y JavaScript, y una lógica de backend desarrollada en Java utilizando principios de programación orientada a objetos (POO) con persistencia de datos mediante conexión a base de datos relacional usando JDBC
 
+```plaintext
 🚧Proyecto front/
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
 │   └── images/
 ├── controllers/
-├── views
+├── views/
 ├── index.html
+```
 
 👩🏼‍💻👨🏼‍💻 
 ### 1. Módulo de Ingreso y Registro
