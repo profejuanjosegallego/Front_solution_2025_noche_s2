@@ -22,3 +22,4 @@
 (https://trello.com/invite/b/6893eabba8a05e9412c811f9/ATTIa3f459174f37f65bced78b80b53cffb6557DE34A/celula-5-asistencia)
 ### 6. Módulo de Apoyo y Bienestar Estudiantil
 ### 7. Módulo Estadístico y Analítico
+(https://trello.com/invite/b/689400b849b2bf1b8ebca243/ATTI75a6a9546dadb51cfa49fdfaffa7bc1c594805DC/estadisticas)
