@@ -16,6 +16,7 @@
 👩🏼‍💻👨🏼‍💻 
 ### 1. Módulo de Ingreso y Registro
 ### 2. Módulo de Hoja de Vida Estudiantil
+(https://trello.com/invite/b/68a35ce5eb0a157339c49be4/ATTI16fbf61d69f5f7e86eeac80d283c604c8A032A1D/proyecto-integrador)
 ### 3. Módulo Familiar
 ### 4. Módulo Académico y Seguimiento de Notas
 ### 5. Módulo de Asistencia
