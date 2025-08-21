@@ -15,6 +15,7 @@
 
 👩🏼‍💻👨🏼‍💻 
 ### 1. Módulo de Ingreso y Registro
+(https://trello.com/invite/b/689401da9655c273cd95f3ce/ATTI8961fa4e4bb9e1d8931501c10dedc90dE9B592D9/ingreso-y-registro)
 ### 2. Módulo de Hoja de Vida Estudiantil
 (https://trello.com/invite/b/68a35ce5eb0a157339c49be4/ATTI16fbf61d69f5f7e86eeac80d283c604c8A032A1D/proyecto-integrador)
 ### 3. Módulo Familiar
