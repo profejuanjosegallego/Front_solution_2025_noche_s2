@@ -5,6 +5,7 @@ let nombreUsuario=document.getElementById("nombreUsuario")
 let contraseñaUsuario=document.getElementById("contraseñaUsuario")
 let botonFormulario=document.getElementById("botonFormulario")
 
+
 //Necesito activar el control segun las interacciones del usuario
 botonFormulario.addEventListener("click",function(evento){
     evento.preventDefault()
@@ -14,7 +15,7 @@ botonFormulario.addEventListener("click",function(evento){
 
 
     //validando los datos
-    if(nombreRecibido=="" || nombreRecibido=="juan"){
+    if(nombreRecibido==""||nombreRecibido=="juan"){
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -26,7 +27,6 @@ botonFormulario.addEventListener("click",function(evento){
             title: "Oops...",
             text: "Revisa la contraseña ingresado",
         });
-
     }
 
 
