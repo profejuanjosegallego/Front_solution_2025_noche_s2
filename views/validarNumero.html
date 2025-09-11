@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <section class="container my-5">
+    <section class="row justify-content-center text-center">
+        <section class="col-12 col-md-8">
+            <h3 id="tituloFormulario">Ingresa a nuestra app</h3>
+            <form class="border rounded p-4 shadow" id="formularioIngreso">
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">
+                        <i class="bi bi-person-circle"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Nombre de usuario" id="nombreUsuario" required>
+                </div>
+
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text">
+                        <i class="bi bi-telephone-fill"></i>
+                    </span>
+                    <input 
+                        type="tel" 
+                        class="form-control" 
+                        placeholder="Número de Teléfono (10 dígitos)" 
+                        id="telefonoUsuario" 
+                        required 
+                        pattern="[0-9]{10}" 
+                        title="Ingresa un número de 10 dígitos sin espacios, sin símbolos y sin letras">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">
+                        <i class="bi bi-shield-lock-fill"></i>
+                    </span>
+                    <input type="password" class="form-control" placeholder="Contraseña" id="contraseñaUsuario" required>
+                </div>
+
+                <button class="btn btn-primary my-3 w-100" id="botonFormulario">Ingresar</button>
+
+            </form>
+        </section>
+    </section>
+</section>
+</body>
+</html>
