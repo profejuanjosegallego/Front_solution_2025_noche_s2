@@ -1,0 +1,37 @@
+/* Estilos básicos para los acordeones */
+.accordion-item {
+  border: none; /* Quita borde default */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos del acordeón */
+.accordion-button {
+  background-color: #007bff; /* Azul bootstrap */
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Cuando está abierto */
+.accordion-button:not(.collapsed) {
+  background-color: #0056b3; /* Azul más oscuro */
+  color: #fff;
+}
+
+/* Hover */
+.accordion-button:hover {
+  background-color: #0069d9;
+  color: #fff;
+}
+
+/* Cuerpo del acordeón */
+.accordion-body {
+  background-color: #f8f9fa; /* Gris clarito */
+  color: #333;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 20px;
+}
