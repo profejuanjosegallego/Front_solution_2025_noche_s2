@@ -1,0 +1,20 @@
+/* === Estilos generales === */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+  padding: 40px;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.pie {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #4caf50 0% 83%,
+    /* 83% aprobados */ #f44336 83% 100% /* 17% reprobados */
+  );
+  margin: 20px auto;
+}
