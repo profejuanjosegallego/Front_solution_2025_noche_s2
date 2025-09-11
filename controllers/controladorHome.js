@@ -16,12 +16,14 @@ botonFormulario.addEventListener("click",function(evento){
 
     //validando los datos
     if(nombreRecibido==""||nombreRecibido=="juan"){
+        nombreUsuario.classList.add("is-invalid")
         Swal.fire({
             icon: "error",
             title: "Oops...",
             text: "Revisa el nombre ingresado",
         });
     }else if(contraseñaRecibida==""){
+        contraseñaUsuario.classList.add("is-invalid")
         Swal.fire({
             icon: "error",
             title: "Oops...",
