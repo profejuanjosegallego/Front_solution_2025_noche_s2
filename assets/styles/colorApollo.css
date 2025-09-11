@@ -1,0 +1,33 @@
+/* Colores por tipo de apoyo */
+.solicitud.academica {
+  background-color: #e0f0ff;
+  border-left: 4px solid #007bff;
+}
+
+.solicitud.psicologica {
+  background-color: #e0ffe0;
+  border-left: 4px solid #28a745;
+}
+
+/* Leyenda explicativa */
+.leyenda {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.leyenda span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.leyenda-academica {
+  background-color: #007bff;
+}
+
+.leyenda-psicologica {
+  background-color: #28a745;
+}
