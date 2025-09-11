@@ -16,12 +16,15 @@ botonFormulario.addEventListener("click",function(evento){
 
     //validando los datos
     if(nombreRecibido==""||nombreRecibido=="juan"){
+        //Modificando los estilos segun la logica de negocio
+        nombreUsuario.classList.add("is-invalid")
         Swal.fire({
             icon: "error",
             title: "Oops...",
             text: "Revisa el nombre ingresado",
         });
     }else if(contraseñaRecibida==""){
+        contraseñaUsuario.classList.add("is-invalid")
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -43,3 +46,40 @@ botonFormulario.addEventListener("click",function(evento){
     });*/
 
 })
+
+ <script>
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const mensaje = document.getElementById("mensaje");
+    const btnRegistro = document.getElementById("btnRegistro");
+
+    function validarContraseñas() {
+      if (confirmPassword.value === "") {
+        mensaje.textContent = "";
+        btnRegistro.disabled = true;
+        return;
+      }
+
+      if (password.value === confirmPassword.value) {
+        mensaje.textContent = "✔ Contraseñas coinciden";
+        mensaje.className = "exito";
+        btnRegistro.disabled = false;
+      } else {
+        mensaje.textContent = "✘ Las contraseñas no coinciden";
+        mensaje.className = "error";
+        btnRegistro.disabled = true;
+      }
+    }
+
+    password.addEventListener("input", validarContraseñas);
+    confirmPassword.addEventListener("input", validarContraseñas);
+
+    document.getElementById("formRegistro").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("¡Registro exitoso!");
+      // Aquí puedes enviar los datos al servidor si todo está correcto
+    });
+  </script>
+
+</body>
+</html>

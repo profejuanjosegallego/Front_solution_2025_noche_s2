@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f9fafb;
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+label {
+  margin-right: 8px;
+}
+
+input[type="date"] {
+  margin: 5px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+#mensaje {
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+#resultados {
+  margin-top: 20px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}

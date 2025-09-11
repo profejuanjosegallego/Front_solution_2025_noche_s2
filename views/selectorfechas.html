@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../assets/styles/selectorfechas.css" />
+    <title>Filtro por rango de fechas</title>
+  </head>
+  <body>
+    <h2>Filtrar estadísticas por rango de fechas</h2>
+
+    <label for="fechaInicio">Fecha inicio:</label>
+    <input type="date" id="fechaInicio" />
+
+    <label for="fechaFin">Fecha fin:</label>
+    <input type="date" id="fechaFin" />
+
+    <button id="btnFiltrar">Aplicar filtro</button>
+    <button id="btnLimpiar">Limpiar filtro</button>
+
+    <p id="mensaje"></p>
+
+    <div id="resultados"></div>
+
+    <script src="../controllers/selectorfechas.js"></script>
+  </body>
+</html>

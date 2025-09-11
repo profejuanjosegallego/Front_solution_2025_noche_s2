@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/colorApollo.css" />
+  </head>
+  <body>
+    <div class="solicitud" [ngClass]="getClaseTipo(apoyo.tipo)">
+      <p>{{ apoyo.descripcion }}</p>
+    </div>
+
+    <!-- Leyenda -->
+    <div class="leyenda">
+      <span class="leyenda-academica"></span> Académica
+      <span class="leyenda-psicologica"></span> Psicológica
+    </div>
+  </body>
+</html>
