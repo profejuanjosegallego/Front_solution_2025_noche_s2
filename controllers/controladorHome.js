@@ -47,7 +47,7 @@ botonFormulario.addEventListener("click",function(evento){
 
 })
 
- <script>
+
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirmPassword");
     const mensaje = document.getElementById("mensaje");
@@ -79,7 +79,5 @@ botonFormulario.addEventListener("click",function(evento){
       alert("¡Registro exitoso!");
       // Aquí puedes enviar los datos al servidor si todo está correcto
     });
-  </script>
+ 
 
-</body>
-</html>
