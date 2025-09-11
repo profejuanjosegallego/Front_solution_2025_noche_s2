@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solicitud de Apoyo</title>
+  <link rel="stylesheet" href="./assets/styles/estilosmary.css">
+  
+  <script src="HUFRONTAP01.js" defer></script>
+</head>
+<body>
+  <main class="form-container">
+    <h1 class="form-container__title">SOLICITUD DE APOYO</h1>
+
+    <form id="apoyoForm" class="form" novalidate>
+        <div class="form__group">
+            <label for="Escriba nombre completo" class="form__label">Nombre Completo <span aria-hidden="true">*</span></label>
+            <input type="text" id="Escriba nombre completo" name="Escriba nombre completo" class="form__input" placeholder="Escriba nombre completo">
+            <span id="Escriba nombre completo" class="form__error" aria-live="polite"></span>
+        </div>
+
+       <div class="form__group">
+        <label for="tipoDocumento" class="form__label">Seleccione el tipo de documento <span aria-hidden="true">*</span></label>
+        <select id="tipoDocumento" name="tipoDocumento" class="form__input" aria-required="true" required>
+          <option value="">-- Seleccione --</option>
+          <option value="academico">Cedula de ciudadania</option>
+          <option value="psicologico">Targeta de identidad</option>
+          <option value="psicologico">Pasaporte</option>
+          <option value="psicologico">PPT</option>
+        </select>
+        <span id="tipoDocumentoError" class="form__error" aria-live="polite"></span>
+      </div>
+
+      <div class="form__group">
+        <label for="Escriba numero de documento" class="form__label">Digite su documento <span aria-hidden="true"></span>*</label>
+        <input type="Escriba numero de documento" id="Escriba numero de documento" name="Escriba numero de documento" class="form__input" placeholder="Escriba numero de documento">
+        <span id="Escriba numero de documento" class="form__error" aria-live="polite"></span>
+      </div>
+
+      <div class="form__group">
+        <label for="tipoApoyo" class="form__label">Tipo de Apoyo <span aria-hidden="true">*</span></label>
+        <select id="tipoApoyo" name="tipoApoyo" class="form__input" aria-required="true" required>
+          <option value="">-- Seleccione --</option>
+          <option value="academico">Académico</option>
+          <option value="psicologico">Psicológico</option>
+        </select>
+        <span id="tipoApoyoError" class="form__error" aria-live="polite"></span>
+      </div>
+
+      <div class="form__group">
+        <label for="motivo" class="form__label">Motivo <span aria-hidden="true">*</span></label>
+        <input type="text" id="motivo" name="motivo" class="form__input" placeholder="Escriba el motivo" aria-required="true" required>
+        <span id="motivoError" class="form__error" aria-live="polite"></span>
+      </div>
+
+      <div class="form__group">
+        <label for="detalles" class="form__label">Detalles</label>
+        <textarea id="detalles" name="detalles" class="form__input form__textarea" placeholder="Describa la situación..."></textarea>
+        <span id="detallesError" class="form__error" aria-live="polite"></span>
+      </div>
+
+      <div class="form__group form__group--center">
+        <button type="submit" class="form__button">Enviar Solicitud</button>
+      </div>
+    </form>
+
+    <div id="formMessage" class="form__message" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>

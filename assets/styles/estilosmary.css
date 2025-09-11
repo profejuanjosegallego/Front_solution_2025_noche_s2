@@ -1,0 +1,115 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 480px;
+}
+
+.form-container__title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.25rem;
+}
+
+.form__group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.form__input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.15);
+}
+
+.form__textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.input--invalid {
+  border-color: #c62828 !important;
+  box-shadow: 0 0 6px rgba(198, 40, 40, 0.12) !important;
+}
+
+.form__error {
+  color: #c62828;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.form__group--center {
+  display: flex;
+  justify-content: center;
+}
+
+.form__button {
+  background: #ffffff;   
+  color: #000000;        
+  padding: 0.8rem 2rem;
+  border: 2px solid #000000;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+
+.form__button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.form__message {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form__message--error {
+  background: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+.form__message--success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #cde9d4;
+}
+
+/* Pequeño ajuste responsive */
+@media (max-width: 420px) {
+  .form__button { width: 100%; }
+}
