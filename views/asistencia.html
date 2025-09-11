@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Asistencia Mensual</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="stylesheet" href="estilos.css/estilos.css">
+    <link rel="stylesheet" href="../assets/styles/estilosDRAKO.css">
+</head>
+<body>
+
+<div class="chart-container">
+    <h2>Porcentaje de Asistencia por Mes</h2>
+    <canvas id="asistenciaChart"></canvas>
+</div>
+
+<script>
+    //array)}
+    const datosAsistencia = [
+        { mes: 'Enero', asistentes: 85, total: 100 },
+        { mes: 'Febrero', asistentes: 92, total: 100 },
+        { mes: 'Marzo', asistentes: 78, total: 100 },
+        { mes: 'Abril', asistentes: 95, total: 100 },
+        { mes: 'Mayo', asistentes: 88, total: 100 },
+        { mes: 'Junio', asistentes: 75, total: 100 }
+    ];
+
+   
+    const meses = datosAsistencia.map(item => item.mes);
+    const porcentajes = datosAsistencia.map(item => (item.asistentes / item.total) * 100);
+
+    
+    const ctx = document.getElementById('asistenciaChart').getContext('2d');
+
+
+    const miGrafico = new Chart(ctx, {
+        type: 'bar', 
+        data: {
+            labels: meses,
+            datasets: [{
+                label: 'Porcentaje de Asistencia',
+                data: porcentajes,
+                backgroundColor: 'rgba(75, 192, 192, 0.7)', 
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    title: {
+                        display: true,
+                        text: 'Porcentaje (%)'
+                    }
+                }
+            },
+            
+        },
+        plugins: [ChartDataLabels] 
+    });
+</script>
+
+</body>
+</html>
