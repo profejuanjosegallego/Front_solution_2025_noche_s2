@@ -1,0 +1,35 @@
+/* Fondo suave y centrado */
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos personalizados de la tarjeta */
+.user-card {
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #e8f0fe, #ffffff);
+  color: #333;
+}
+
+/* Título (nombre del usuario) */
+.user-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a4d69;
+}
+
+/* Texto del documento y correo */
+.user-card .card-text {
+  font-size: 1rem;
+  color: #4a6572;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .user-card .card-title {
+    font-size: 1.25rem;
+  }
+  .user-card .card-text {
+    font-size: 0.9rem;
+  }
+}
