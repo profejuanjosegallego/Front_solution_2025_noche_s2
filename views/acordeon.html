@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassRoom APP</title>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="./assets/styles/estilos.css" />
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="fuente">
+    <header>
+      <nav class="navbar navbar-expand-lg colorPrincipal navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ClassRoomApp</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mt-5 pt-5">
+      <!-- Acordeones -->
+      <section class="container my-5">
+        <div class="accordion" id="accordionExample">
+          <!-- Acordeón Home -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingHome">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseHome"
+                aria-expanded="true"
+                aria-controls="collapseHome"
+              >
+                Home
+              </button>
+            </h2>
+            <div
+              id="collapseHome"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingHome"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Bienvenido a <strong>Class Room App</strong>, aquí encontrarás
+                todo lo relacionado con nuestra plataforma.
+              </div>
+            </div>
+          </div>
+
+          <!-- Acordeón Features -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFeatures">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFeatures"
+                aria-expanded="false"
+                aria-controls="collapseFeatures"
+              >
+                Features
+              </button>
+            </h2>
+            <div
+              id="collapseFeatures"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFeatures"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Nuestra app incluye registro de usuarios, gestión de clases,
+                notificaciones en tiempo real y más.
+              </div>
+            </div>
+          </div>
+
+          <!-- Acordeón Pricing -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPricing">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePricing"
+                aria-expanded="false"
+                aria-controls="collapsePricing"
+              >
+                Pricing
+              </button>
+            </h2>
+            <div
+              id="collapsePricing"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingPricing"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Ofrecemos un plan gratuito y un plan premium con más
+                funcionalidades avanzadas.
+              </div>
+            </div>
+          </div>
+
+          <!-- Acordeón Disabled -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingDisabled">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseDisabled"
+                aria-expanded="false"
+                aria-controls="collapseDisabled"
+                disabled
+              >
+                Disabled
+              </button>
+            </h2>
+            <div
+              id="collapseDisabled"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingDisabled"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Esta sección está deshabilitada por ahora, pronto tendrás
+                novedades.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container-fluid p-5 colorSecundario text-white">
+      <section class="row">
+        <section class="col-12 text-center">
+          <h5>&copy; Todos los derechos reservados</h5>
+          <h5>Proyecto Integrador Nivel 2</h5>
+          <br />
+          <i class="bi bi-github fs-1"></i>
+          <i class="bi bi-whatsapp fs-1 mx-2"></i>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Tu JS -->
+    <script src="./controllers/controladorHome.js" type="module"></script>
+  </body>
+</html>
