@@ -8,26 +8,28 @@
     rel="stylesheet" 
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
     crossorigin="anonymous">
+    <link rel="icon" href="img/icon.png">
 </head>
 <body class="bg-primary d-flex justify-content-center align-items-center vh-100">
     <div class=" login-container bg-light p-5 rounded-5 text-dark shadow-lg" style="width: 25rem;">
-        <div class="login-icon d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
         <img src="./img/LogIn.png" alt="Icono de inicio de sesion"
         height="130rem">
         </div>
-        <div class="text-center fs-3 text fw-medium">Log In</div>
-        <div class="login-username input-group mt-3">
+        <div class="text-center fs-3 fw-medium">Log In</div>
+        <div class="input-group mt-3">
        <img class="input-group-text" src="./img/person.png" alt="Icono de persona" height="45rem">
         <input class="form-control" type="text" id="username" placeholder="Username" required>
         </div>
-        <div class="login-passw input-group mt-3">
+        <div class="input-group mt-3">
             <img class="input-group-text" src="./img/candado.png" alt="Icono de candado" height="46rem">
         <input class="form-control" type="password" id="password" placeholder="Password" required>        
         </div>
         
-        <div class="login-button mt-4 fw-medium d-flex justify-content-center">
-        <button id="loginBtn" class="logButton btn btn-primary w-100 text-white fw-medium shadow-sm rounded-pill" > Log In</button>
-        </div>
+       <div class="mt-4">
+       <button id="loginBtn" class="btn btn-primary w-100 text-white fw-medium shadow-sm rounded-pill">Log In</button>
+       </div>
+       
         <div class="justify-content-around mt-2" style="font-size: 1rem;">
         <div class="login-forgot">
         <a href="#" class="text-decoration-none fst-italic">Forgot password?</a>
