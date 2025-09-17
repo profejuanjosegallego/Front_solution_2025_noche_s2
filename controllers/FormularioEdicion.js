@@ -17,6 +17,4 @@ const direccion = document.getElementById('direccion').value;
         alert('El campo de dirección es obligatorio.');
         evento.preventDefault(); // Evita que se envíe el formulario
       }
-
-alert("Edicion guardada")
 })
