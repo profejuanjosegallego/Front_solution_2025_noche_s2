@@ -81,6 +81,8 @@ function mostrarAlumnos(indexGrupo, indexMateria) {
   grupoActual = indexGrupo;
   materiaActual = indexMateria;
 
+  document.getElementById("formContainer").style.display = "block";
+
   const contenedor = document.getElementById("alumnos");
   const materia = data[indexGrupo].materias[indexMateria];
   let html = `
@@ -129,13 +131,29 @@ document.getElementById("formAlumno").addEventListener("submit", function (e) {
   const editIndex = parseInt(document.getElementById("editIndex").value);
 
   // Validación
-  if (!nombre || isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
-    alert("⚠️ Todos los campos son obligatorios.");
+
+  if (!nombre  || isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+    Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Llena todos los campos",
+        });
     return;
+    
   }
   if ([nota1, nota2, nota3].some(n => n < 0 || n > 5)) {
-    alert("⚠️ Las notas deben estar entre 0 y 5.");
+    Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Las notas deben estar entre 0 y 5",
+        });
     return;
+  } else{
+    Swal.fire({
+            title: "Guardado",
+            icon: "success",
+            draggable: true
+});
   }
 
   const promedio = ((nota1 + nota2 + nota3) / 3).toFixed(1);
