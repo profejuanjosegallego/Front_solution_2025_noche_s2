@@ -1,20 +1,48 @@
-let btnGuardar=document.getElementById("btnGuardar")
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formulario");
+  const btnGuardar = document.getElementById("btnGuardar");
 
-let formularioEdicion=document.getElementById("formulario")
+  btnGuardar.addEventListener("click", (e) => {
+    e.preventDefault(); // evitar recarga
 
-formularioEdicion.addEventListener("submit",function(evento){
-const correo = document.getElementById('correo').value;
-const telefono = document.getElementById('telefono').value;
-const direccion = document.getElementById('direccion').value;
-      // Validar que el campo no esté vacío
-      if (correo.trim() === '') {
-        alert('El campo de correo electrónico es obligatorio.');
-        evento.preventDefault(); // Evita que se envíe el formulario
-      }else if (telefono.trim() === '') {
-        alert('El campo de teléfono es obligatorio.');
-        evento.preventDefault(); // Evita que se envíe el formulario
-      }else if (direccion.trim() === '') {
-        alert('El campo de dirección es obligatorio.');
-        evento.preventDefault(); // Evita que se envíe el formulario
+    // Campos obligatorios (con correo incluido)
+    const obligatorios = [
+      "direccion",
+      "telefono",
+      "correo",
+      "fechaNacimiento",
+      "institucion",
+      "programa",
+      "semestre"
+    ];
+
+    let valido = true;
+    let mensajes = [];
+
+    obligatorios.forEach((id) => {
+      const campo = document.getElementById(id);
+      if (!campo || !campo.value.trim()) {
+        valido = false;
+        if (campo) campo.classList.add("is-invalid"); // Bootstrap rojo
+        mensajes.push(`El campo "${id}" es obligatorio.`);
+      } else {
+        campo.classList.remove("is-invalid");
+        campo.classList.add("is-valid"); // Bootstrap verde
       }
-})
+    });
+
+    if (!valido) {
+      alert("⚠️ Faltan campos obligatorios:\n\n" + mensajes.join("\n"));
+      return;
+    }
+
+    // Si todo está correcto, mostrar mensaje de éxito
+    const alertSuccess = document.createElement("div");
+    alertSuccess.className = "alert alert-success mt-4";
+    alertSuccess.textContent = "✅ Datos guardados correctamente.";
+
+    if (!document.querySelector(".alert-success")) {
+      form.appendChild(alertSuccess);
+    }
+  });
+});
