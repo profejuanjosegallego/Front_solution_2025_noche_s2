@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>HU-FRONT-FAM09 – Validar duplicados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2 class="mb-4 text-center">HU-FRONT-FAM09 – Validación de duplicados</h2>
+
+    <form id="formFamiliares" class="card p-4 shadow-sm">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" id="nombre" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Relación</label>
+        <select id="relacion" class="form-select" required>
+          <option value="">Seleccione</option>
+          <option value="Padre">Padre</option>
+          <option value="Madre">Madre</option>
+          <option value="Hermano">Hermano</option>
+          <option value="Hermana">Hermana</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+
+    <ul id="listaFamiliares" class="list-group mt-4"></ul>
+  </div>
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="controllers/validacionDuplicados.js"></script>
+</body>
+</html>
