@@ -37,7 +37,7 @@ const students = [
   { id: 30, name: "Renata Gómez", email: "renata@ejemplo.com", group: "Grupo C", attendance: "No registrado" },
 ];
 
-// Estado asistencia en memoria inicializado
+
 const attendanceStates = {};
 students.forEach(s => attendanceStates[s.id] = 'No registrado');
 
@@ -45,6 +45,7 @@ students.forEach(s => attendanceStates[s.id] = 'No registrado');
 const tbody = document.getElementById('studentsTbody');
 const searchInput = document.getElementById('searchInput');
 const filterForm = document.getElementById('filterForm');
+
 const selectAllCheckbox = document.getElementById('selectAllCheckbox');
 
 // Crear nuevo select alfabético (A-Z + Todos)
@@ -97,6 +98,51 @@ function renderTable(filter = {}) {
     // No se filtra por materia dado que no está implementado en datos
     return matchesSearch && matchesGroup && matchesAlpha;
   });
+
+const materiaSelect = document.getElementById('materiaSelect');
+const grupoSelect = document.getElementById('grupoSelect');
+const alphaFilterDiv = document.querySelector('.alpha-filter .letters'); // Contenedor para los botones de letras
+const fechaInput = document.getElementById('fechaInput');
+
+// Crear botones de filtro alfabético (A-Z + Todos)
+const alphaOptions = ['Todos', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
+alphaOptions.forEach(letter => {
+  const button = document.createElement('button');
+  button.className = 'letter-btn';
+  button.textContent = letter;
+  button.setAttribute('data-letter', letter === 'Todos' ? '' : letter);
+  alphaFilterDiv.appendChild(button);
+});
+
+// Modificar renderTable para incluir filtro alfabético
+function renderTable(filter = {}) {
+  tbody.innerHTML = '';
+
+  const searchText = (filter.search || '').toLowerCase();
+  const selectedMateria = filter.materia || 'Matemáticas'; // Mantener por si se implementa en el futuro
+  const selectedGrupo = filter.grupo || 'Grupo A';
+  const selectedAlpha = (filter.alpha || '').toUpperCase();
+
+  const filteredStudents = students.filter(student => {
+    const matchesSearch = student.name.toLowerCase().includes(searchText) || student.email.toLowerCase().includes(searchText);
+    const matchesGroup = student.group === selectedGrupo;
+    const matchesAlpha = selectedAlpha === '' || student.name.toUpperCase().startsWith(selectedAlpha);
+    return matchesSearch && matchesGroup && matchesAlpha;
+  });
+
+  if (filteredStudents.length === 0) {
+    const trEmpty = document.createElement('tr');
+    const tdEmpty = document.createElement('td');
+    tdEmpty.colSpan = 4;
+    tdEmpty.style.textAlign = 'center';
+    tdEmpty.style.padding = '1.2rem';
+    tdEmpty.style.color = '#666';
+    tdEmpty.textContent = 'No se encontraron estudiantes para los criterios seleccionados.';
+    trEmpty.appendChild(tdEmpty);
+    tbody.appendChild(trEmpty);
+    return;
+  }
+
 
   filteredStudents.forEach(student => {
     const tr = document.createElement('tr');
@@ -157,6 +203,20 @@ disableFutureDates();
     const tdGroup = document.createElement('td');
     tdGroup.className = 'student-group';
     const [grpText, grpLetter] = student.group.split(' ');
+
+    // Columna estudiante
+    const tdName = document.createElement('td');
+    tdName.innerHTML = `
+      <div class="student-info">
+        <span class="student-name">${student.name}</span>
+        <span class="student-email">${student.email}</span>
+      </div>
+    `;
+
+    // Columna grupo
+    const tdGroup = document.createElement('td');
+    const [grpText, grpLetter] = student.group.split(' ');
+    tdGroup.className = 'student-group';
     tdGroup.innerHTML = `${grpText} <strong>${grpLetter}</strong>`;
 
     // Columna estado
@@ -179,6 +239,13 @@ disableFutureDates();
       }[statusText] || '';
       tdStatus.appendChild(spanStatus);
     }
+
+    tdStatus.innerHTML = `
+      <span class="${statusText === 'No registrado' ? 'status-unregistered' : getStatusButtonClass(statusText)}"
+            aria-label="Estado de asistencia ${statusText}">
+        ${statusText}
+      </span>
+    `;
 
     // Columna acciones
     const tdActions = document.createElement('td');
@@ -221,12 +288,26 @@ disableFutureDates();
     tdActions.appendChild(btnJustified);
 
     tr.appendChild(tdCheckbox);
+
+    tdActions.innerHTML = `
+      <button type="button" class="btn-status btn-present" aria-label="Marcar ${student.name} como presente">Presente</button>
+      <button type="button" class="btn-status btn-absent" aria-label="Marcar ${student.name} como ausente">Ausente</button>
+      <button type="button" class="btn-status btn-justified" aria-label="Marcar ${student.name} como justificado">Justificado</button>
+    `;
+
+    // Añadir event listeners a los botones de acción
+    tdActions.querySelector('.btn-present').addEventListener('click', () => updateAttendance(student.id, 'Presente'));
+    tdActions.querySelector('.btn-absent').addEventListener('click', () => updateAttendance(student.id, 'Ausente'));
+    tdActions.querySelector('.btn-justified').addEventListener('click', () => updateAttendance(student.id, 'Justificado'));
+
+
     tr.appendChild(tdName);
     tr.appendChild(tdGroup);
     tr.appendChild(tdStatus);
     tr.appendChild(tdActions);
     tbody.appendChild(tr);
   });
+
 
   if (filteredStudents.length === 0) {
     const trEmpty = document.createElement('tr');
@@ -238,6 +319,16 @@ disableFutureDates();
     tdEmpty.textContent = 'No se encontraron estudiantes para los criterios seleccionados.';
     trEmpty.appendChild(tdEmpty);
     tbody.appendChild(trEmpty);
+}
+
+// Función auxiliar para obtener la clase CSS del botón de estado
+function getStatusButtonClass(status) {
+  switch (status) {
+    case 'Presente': return 'btn-present';
+    case 'Ausente': return 'btn-absent';
+    case 'Justificado': return 'btn-justified';
+    default: return '';
+
   }
 }
 
@@ -248,6 +339,7 @@ function updateAttendance(studentId, status) {
 }
 
 function getCurrentFilters() {
+
   return {
     search: searchInput.value.trim(),
     materia: document.getElementById('materiaSelect').value,
@@ -294,11 +386,23 @@ selectAllCheckbox.addEventListener('change', () => {
 });
 // --- FIN: Lógica para controlar la selección de todos los checkboxes ---
 
+  const activeLetterButton = alphaFilterDiv.querySelector('.letter-btn.active');
+  const selectedDate = fechaInput.value;
+  return {
+    search: searchInput.value.trim(),
+    materia: materiaSelect.value,
+    grupo: grupoSelect.value,
+    alpha: activeLetterButton ? activeLetterButton.getAttribute('data-letter') : '',
+  };
+}
+
+
 // Eventos
 filterForm.addEventListener('submit', e => {
   e.preventDefault();
   renderTable(getCurrentFilters());
 });
+
 searchInput.addEventListener('input', () => {
   renderTable(getCurrentFilters());
 });
@@ -314,3 +418,42 @@ selectAlpha.addEventListener('change', () => {
 
 // Iniciar tabla
 renderTable(getCurrentFilters());
+
+searchInput.addEventListener('input', () => {
+  renderTable(getCurrentFilters());
+});
+
+materiaSelect.addEventListener('change', () => {
+  renderTable(getCurrentFilters());
+});
+
+grupoSelect.addEventListener('change', () => {
+  // Limpiar búsqueda y filtro alfabético cuando cambia grupo para mejor UX
+  searchInput.value = '';
+  alphaFilterDiv.querySelectorAll('.letter-btn').forEach(btn => btn.classList.remove('active'));
+  renderTable(getCurrentFilters());
+});
+
+alphaFilterDiv.addEventListener('click', (e) => {
+  if (e.target.classList.contains('letter-btn')) {
+    // Remover 'active' de todos los botones
+    alphaFilterDiv.querySelectorAll('.letter-btn').forEach(btn => btn.classList.remove('active'));
+    // Añadir 'active' al botón clickeado
+    e.target.classList.add('active');
+    renderTable(getCurrentFilters());
+  }
+});
+
+// Iniciar tabla
+
+function disableFutureDates() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // Meses empiezan en 0
+  const dd = String(today.getDate()).padStart(2, '0');
+  const maxDate = `${yyyy}-${mm}-${dd}`;
+  fechaInput.setAttribute('max', maxDate);
+}
+disableFutureDates();
+renderTable(getCurrentFilters());
+

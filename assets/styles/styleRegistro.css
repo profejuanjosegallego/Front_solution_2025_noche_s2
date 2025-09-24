@@ -161,6 +161,13 @@ select:focus, input[type="date"]:focus {
   outline: 2.8px solid #3B82F6;
 }
 
+input[type="date"] {
+  cursor: pointer;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
 /* Nuevo filtro alfabético (botones A-Z) */
 .alpha-filter {
   display: flex;
@@ -375,3 +382,4 @@ tbody tr.table-danger:hover {
 tbody tr.table-warning:hover {
     background-color: #ffeeba;
 }
+

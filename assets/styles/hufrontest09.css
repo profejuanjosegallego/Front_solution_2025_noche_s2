@@ -1,8 +1,7 @@
-/* === Estilos generales === */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Fredoka", sans-serif;
   text-align: center;
-  background: linear-gradient(135deg, #fceabb, #f8b500);
+  background: linear-gradient(200deg, #231bd1, #7d6c9d);
   padding: 40px;
   margin: 0;
   min-height: 100vh;
@@ -13,8 +12,27 @@ body {
   height: 200px;
   border-radius: 50%;
   background: conic-gradient(
-    #4caf50 0% 83%,
-    /* 83% aprobados */ #f44336 83% 100% /* 17% reprobados */
+    #4caf50 0% 83%, #f44336 83% 100% 
   );
   margin: 20px auto;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+footer {
+  background: #7d6c9d; 
+  border-top: 1px solid #8885b9;
 }

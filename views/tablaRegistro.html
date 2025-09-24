@@ -4,24 +4,40 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EduTrack - Registro de Asistencia</title>
+
 <link rel="stylesheet" href="../assets/styles/styleRegistro.css">
 <link rel="shortcut icon" href="../assets/img/favi.png" type="image/x-icon">
+=======
+<link rel="stylesheet" href="./styleRegistro.css">
+
 </head>
 <body>
 
 <div class="container">
 
   <nav class="sidebar" aria-label="Navegación principal">
+
     <h1>Registro</h1>
 
     <a href="#" class="active" tabindex="0" aria-current="page" aria-label="Ir a Dashboard">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l3-3 4 4 8-8 3 3v7a4 4 0 01-4 4H7a4 4 0 01-4-4v-3z" fill="currentColor"></path></svg>
       Registro de Asistencia
+
+    <h1>EduTrack</h1>
+
+    <a href="#" class="active" tabindex="0" aria-current="page" aria-label="Ir a Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l3-3 4 4 8-8 3 3v7a4 4 0 01-4 4H7a4 4 0 01-4-4v-3z" fill="currentColor"></path></svg>
+      Dashboard
+
     </a>
 
     <a href="#" aria-lssabel="Ir a Registro de Asistencia">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12v-3a2 2 0 012-2h14a2 2 0 012 2v6a2 2 0 01-2 2H9l-6 6" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+
      información del Estudiante
+
+      Registro Asistencia
+
     </a>
 
     <a href="#" aria-label="Ir a Reportes">
@@ -35,7 +51,11 @@
     </a>
 
     <!-- Cerrar sesión con link -->
+
     <a href="../views/logIn.html" class="bottom-logout" aria-label="Cerrar sesión">
+
+    <a href="login.html" class="bottom-logout" aria-label="Cerrar sesión">
+
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" /><path d="M16 17l5-5-5-5M21 12H9" /></svg>
       Cerrar Sesión
     </a>
@@ -75,10 +95,17 @@
             </select>
           </div>
 
+
           <div class="filter-field">
             <label for="fechaInput">Fecha</label>
             <input type="date" id="fechaInput" name="fecha" />
           </div>
+
+          <div class="filter-field">
+            <label for="fechaInput">Fecha</label>
+            <input type="date" id="fechaInput" name="fecha" required />
+          </div> 
+
 
         </div>
       </form>
@@ -94,9 +121,11 @@
       <table class="attendance-table" aria-label="Tabla de estudiantes y estado de asistencia">
         <thead>
           <tr>
+
             <th class="checkbox-header">
               <input type="checkbox" id="selectAllCheckbox" aria-label="Seleccionar todos los estudiantes" />
             </th>
+
             <th scope="col">Estudiante</th>
             <th scope="col">Grupo</th>
             <th scope="col">Estado</th>
@@ -112,7 +141,11 @@
   </main>
 
 </div>
+
   <script src="../controllers/controlRegistro.js"></script>
+
+  <script src="./controlRegistro.js"></script>
+
 
 </body>
 </html>

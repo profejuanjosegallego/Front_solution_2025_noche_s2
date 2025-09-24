@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulario de Edición</title>
   <link rel="icon" href="../assets/img/favi.png">
   <link rel="stylesheet" href="../assets/styles/estilos.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
@@ -19,55 +17,134 @@
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-    crossorigin="anonymous"
   />
+  <style>
+    #cuerpo{
+      background-image: url(../assets/img/fondoTres.jpg);
+    }
+  </style>
 </head>
-<body class="fuente bg-light">
+<body class="fuente bg-light" id="cuerpo">
   <section class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6">
+      <div class="col-lg-10">
         <div class="card shadow-lg border-0 rounded-3">
-          <div class="card-body p-4">
-            <h2 class="text-center mb-4">Editar Información de Contacto</h2>
+          <div class="card-body p-5">
+            <h2 class="text-center mb-4">Formulario de Edición</h2>
             
             <form id="formulario">
-              <!-- Dirección -->
-              <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Calle 123 #45-67">
-                <label for="direccion"><i class="bi bi-geo-alt-fill me-2"></i>Dirección</label>
+
+              <!-- SECCIÓN PERSONAL -->
+              <h4 class="mb-3 text-primary"><i class="bi bi-person-badge me-2"></i>Datos Personales</h4>
+              <div class="row g-3">
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Calle 123 #45-67">
+                  <label for="direccion"><i class="bi bi-geo-alt-fill me-2"></i>Dirección</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Medellín">
+                  <label for="ciudad"><i class="bi bi-building me-2"></i>Ciudad</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+57 3000000000">
+                  <label for="telefono"><i class="bi bi-telephone-fill me-2"></i>Teléfono</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com">
+                  <label for="correo"><i class="bi bi-envelope-fill me-2"></i>Correo Electrónico</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="estadoCivil" name="estadoCivil" placeholder="Soltero">
+                  <label for="estadoCivil"><i class="bi bi-heart-fill me-2"></i>Estado Civil</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                  <label for="fechaNacimiento"><i class="bi bi-calendar-date-fill me-2"></i>Fecha de Nacimiento</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="eps" name="eps" placeholder="SURA">
+                  <label for="eps"><i class="bi bi-hospital-fill me-2"></i>EPS / Seguro Médico</label>
+                </div>
               </div>
 
-              <!-- Correo -->
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
-                <label for="correo"><i class="bi bi-envelope-fill me-2"></i>Correo Electrónico</label>
+              <hr class="my-5">
+
+              <!-- SECCIÓN LABORAL -->
+              <h4 class="mb-3 text-success"><i class="bi bi-briefcase-fill me-2"></i>Datos Laborales</h4>
+              <div class="row g-3">
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Mi Empresa S.A.">
+                  <label for="empresa"><i class="bi bi-building-check me-2"></i>Empresa</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Analista Junior">
+                  <label for="cargo"><i class="bi bi-person-workspace me-2"></i>Cargo</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="date" class="form-control" id="fechaIngreso" name="fechaIngreso">
+                  <label for="fechaIngreso"><i class="bi bi-calendar2-plus-fill me-2"></i>Fecha de Ingreso</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="jefe" name="jefe" placeholder="Juan Pérez">
+                  <label for="jefe"><i class="bi bi-person-fill-gear me-2"></i>Nombre del Jefe</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="tel" class="form-control" id="telEmpresa" name="telEmpresa" placeholder="+57 604 1234567">
+                  <label for="telEmpresa"><i class="bi bi-telephone-outbound-fill me-2"></i>Teléfono de la Empresa</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="area" name="area" placeholder="Desarrollo de Software">
+                  <label for="area"><i class="bi bi-diagram-3-fill me-2"></i>Área</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="tipoContrato" name="tipoContrato" placeholder="Término fijo">
+                  <label for="tipoContrato"><i class="bi bi-file-earmark-text-fill me-2"></i>Tipo de Contrato</label>
+                </div>
               </div>
 
-              <!-- Teléfono -->
-              <div class="form-floating mb-3">
-                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+57 3000000000">
-                <label for="telefono"><i class="bi bi-telephone-fill me-2"></i>Teléfono</label>
-              </div>
+              <hr class="my-5">
 
-              <!-- Contacto de Emergencia -->
-              <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="emergencia" name="emergencia" placeholder="Nombre del contacto">
-                <label for="emergencia"><i class="bi bi-person-heart me-2"></i>Contacto de Emergencia</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="tel" class="form-control" id="telEmergencia" name="telEmergencia" placeholder="+57 3100000000">
-                <label for="telEmergencia"><i class="bi bi-telephone-outbound-fill me-2"></i>Teléfono de Emergencia</label>
+              <!-- SECCIÓN ESTUDIANTIL -->
+              <h4 class="mb-3 text-info"><i class="bi bi-mortarboard-fill me-2"></i>Datos Estudiantiles</h4>
+              <div class="row g-3">
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="institucion" name="institucion" placeholder="Universidad X">
+                  <label for="institucion"><i class="bi bi-bank2 me-2"></i>Institución</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="programa" name="programa" placeholder="Ingeniería de Software">
+                  <label for="programa"><i class="bi bi-journal-code me-2"></i>Programa</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="semestre" name="semestre" placeholder="3">
+                  <label for="semestre"><i class="bi bi-123 me-2"></i>Semestre</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="date" class="form-control" id="fechaIngresoUni" name="fechaIngresoUni">
+                  <label for="fechaIngresoUni"><i class="bi bi-calendar-event-fill me-2"></i>Fecha de Ingreso</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="date" class="form-control" id="fechaGrad" name="fechaGrad">
+                  <label for="fechaGrad"><i class="bi bi-calendar-check-fill me-2"></i>Fecha Estimada de Graduación</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="modalidad" name="modalidad" placeholder="Presencial / Virtual">
+                  <label for="modalidad"><i class="bi bi-laptop me-2"></i>Modalidad</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                  <input type="text" class="form-control" id="estado" name="estado" placeholder="Activo / En pausa">
+                  <label for="estado"><i class="bi bi-toggle-on me-2"></i>Estado Académico</label>
+                </div>
               </div>
 
               <!-- Botón -->
-              <div class="d-grid">
+              <div class="d-grid mt-5">
                 <button class="btn btn-primary btn-lg" id="btnGuardar">
                   <i class="bi bi-save me-2"></i>Guardar Cambios
                 </button>
               </div>
-            </form>
 
+            </form>
           </div>
         </div>
       </div>

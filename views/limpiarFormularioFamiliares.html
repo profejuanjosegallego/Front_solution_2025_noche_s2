@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HU-FRONT-FAM10 – Limpiar formulario y tabla</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2 class="mb-4 text-center">HU-FRONT-FAM10 – Limpiar Formulario</h2>
+
+    <!-- Formulario -->
+    <form id="formFamiliares" class="card p-4 shadow-sm">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" class="form-control" required autocomplete="off">
+      </div>
+
+      <div class="mb-3">
+        <label for="relacion" class="form-label">Relación</label>
+        <select id="relacion" class="form-select" required>
+          <option value="">Seleccione</option>
+          <option value="Padre">Padre</option>
+          <option value="Madre">Madre</option>
+          <option value="Hermano">Hermano</option>
+          <option value="Hermana">Hermana</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success flex-fill">
+          <i class="fa-solid fa-check me-1"></i> Registrar
+        </button>
+        <button type="button" id="btnReset" class="btn btn-warning flex-fill">
+          <i class="fa-solid fa-eraser me-1"></i> Limpiar
+        </button>
+      </div>
+    </form>
+
+    <!-- Tabla -->
+    <div class="card mt-4 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Familiares Registrados</h5>
+        <table class="table table-striped text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>Nombre</th>
+              <th>Relación</th>
+            </tr>
+          </thead>
+          <tbody id="listaFamiliares"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="controllers/limpiarFormulario.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
