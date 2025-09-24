@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .fuente{
     font-family: "Fredoka", sans-serif;
     font-optical-sizing: auto;
@@ -6,7 +10,7 @@
 }
 
 .banner{
-    background-image: url("../img/fondoTres.jpg");
+    background-image: url("../img/fondoUno.jpg");
     background-position: top center;
     background-size: cover;
     background-attachment: fixed;
@@ -33,19 +37,30 @@
 }
 
 .colorSecundario{
-    background-color: #7d6c9d !important;
+    background-color: #7d6c9d;
 }
 
-.colorTerciario{
-    background-color: #fe8a8d !important;
+/* Estilos para el botón flotante */
+.btn-flotante {
+    position: fixed; 
+    bottom: 30px;
+    right: 30px;
+    background-color: #231bd1; 
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px; 
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    transition: transform 0.3s ease;
 }
 
-.btn-secondary{
-    background-color: #7d6c9d !important;
-    border-color: #7d6c9d !important;
-}
-
-.btn-secondary:hover{
-    background-color: #6c5b7b !important;
-    border-color: #6c5b7b !important;
+.btn-flotante:hover {
+    color: white;
+    transform: scale(1.1); 
 }
