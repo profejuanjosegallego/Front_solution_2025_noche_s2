@@ -1,0 +1,75 @@
+
+.fuente{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+
+.banner{
+    background-image: url("../img/fondoTres.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 25%;
+    position: relative;
+    z-index: 1;
+
+}
+
+.banner::after{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.colorPrincipal{
+    background-color: #231bd1;
+}
+
+.colorSecundario{
+    background-color: #7d6c9d !important;
+}
+
+.colorTerciario{
+    background-color: #fe8a8d !important;
+}
+
+.btn-secondary{
+    background-color: #7d6c9d !important;
+    border-color: #7d6c9d !important;
+}
+
+.btn-secondary:hover{
+    background-color: #6c5b7b !important;
+    border-color: #6c5b7b !important;
+}
+#contenedorPrincipal {
+  position: relative;
+  min-height: 100vh; /* para que cubra toda la pantalla */
+  background-image: url('../img/utiles.jpg'); /* usa la ruta correcta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+#formularioIngresoWrapper {
+  background-color: rgba(255, 255, 255, 0.85); /* blanco semi-transparente */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10; /* para que quede por encima del fondo */
+}
