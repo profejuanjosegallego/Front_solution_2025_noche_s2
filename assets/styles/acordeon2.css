@@ -1,0 +1,47 @@
+css
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+  color: #333;
+}
+
+header {
+  background: #004080;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+h2 {
+  margin: 1rem 0;
+}
+
+.accordion {
+  width: 80%;
+  margin: auto;
+}
+
+.accordion-item {
+  background: #e6ecf5;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-item:hover {
+  background: #d4e0f0;
+}
+
+.accordion-content {
+  display: none;
+  padding: 1rem;
+  background: #fff;
+  border-left: 3px solid #004080;
+}
