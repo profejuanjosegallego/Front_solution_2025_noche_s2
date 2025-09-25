@@ -1,0 +1,54 @@
+/* Fuente */
+.font-fredoka {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* Banner con imagen */
+.banner {
+  background-image: url("../img/fondoTres.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Colores corporativos */
+.bg-colorPrincipal {
+  background-color: #231bd1;
+}
+
+.bg-colorSecundario {
+  background-color: #7d6c9d !important;
+}
+
+.bg-colorTerciario {
+  background-color: #fe8a8d !important;
+}
+
+/* Botón secundario */
+.btn-secondary {
+  background-color: #7d6c9d;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #6c5b7b;
+}
+
+
+
+/* Colores notas */
+.nota-baja {
+  color: rgb(248, 5, 5);
+  font-weight: bold;
+}
+
+.nota-media {
+  color: rgb(229, 255, 0);
+  font-weight: bold;
+}
+
+.nota-alta {
+  color: rgb(6, 253, 6);
+  font-weight: bold;
+}

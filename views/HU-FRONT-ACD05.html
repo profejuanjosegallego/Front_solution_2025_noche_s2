@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fuente Fredoka -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-fredoka">
+  <!-- Banner -->
+  <section class="relative h-64 bg-cover bg-center banner flex items-center justify-center">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <h1 class="text-4xl md:text-5xl font-bold text-white relative z-10">📘 Notas</h1>
+  </section>
+
+  <!-- Contenedor tabla -->
+  <div class="max-w-5xl mx-auto mt-10 bg-white rounded-2xl shadow-lg p-6">
+    <div class="overflow-x-auto">
+      <table id="tablaNotas" class="w-full border-collapse rounded-lg overflow-hidden">
+        <thead class="bg-colorPrincipal">
+          <tr>
+            <th class="p-3">Nombre</th>
+            <th class="p-3">Materia</th>
+            <th class="p-3">Correo</th>
+            <th class="p-3">Nota</th>
+            <th class="p-3">Nota Final</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-6">
+      <button class="btn-secondary px-6 py-2 rounded-lg font-bold hover:blue" >Descargar reporte</button>
+    </div>
+  </div>
+  <script src="/Front_solution_2025_noche_s2/controllers/HU-FRONT-ACD05.js"></script>
+</body>
+</html>
