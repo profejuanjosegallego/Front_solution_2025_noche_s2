@@ -1,11 +1,18 @@
+
+
+
 body {
     background-color: #e3f1ff;
   }
   
   h2 {
-    color: #000000;
-    
-  }
+  color: #000000;
+  font-size: 28px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: #555555 0px 5px 5px;
+}
+
   
   form input {
     border-radius: 4px;
