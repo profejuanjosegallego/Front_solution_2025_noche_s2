@@ -1,37 +1,60 @@
-/* Estilos básicos para los acordeones */
-.accordion-item {
-  border: none; /* Quita borde default */
-  margin-bottom: 10px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe, #55efc4, #ffeaa7);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  font-family: "Fredoka", sans-serif;
 }
 
-/* Títulos del acordeón */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.accordion-item {
+  border: none;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
 .accordion-button {
-  background-color: #007bff; /* Azul bootstrap */
-  color: white;
-  font-weight: 500;
+  font-weight: 600;
+  color: #fff;
   transition: all 0.3s ease;
 }
 
-/* Cuando está abierto */
-.accordion-button:not(.collapsed) {
-  background-color: #0056b3; /* Azul más oscuro */
-  color: #fff;
-}
 
-/* Hover */
+#headingInfo .accordion-button { background-color: #0984e3; }
+#headingAcademic .accordion-button { background-color: #6c5ce7; }
+#headingExtra .accordion-button { background-color: #00b894; }
+#headingWork .accordion-button { background-color: #d63031; }
+#headingSkills .accordion-button { background-color: #e17055; }
+#headingContact .accordion-button { background-color: #fd79a8; }
+
+
 .accordion-button:hover {
-  background-color: #0069d9;
-  color: #fff;
+  filter: brightness(1.1);
 }
 
-/* Cuerpo del acordeón */
+
+.accordion-button:not(.collapsed) {
+  filter: brightness(0.9);
+}
+
+
 .accordion-body {
-  background-color: #f8f9fa; /* Gris clarito */
-  color: #333;
+  background-color: #f8f9fa;
+  color: #2d3436;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.6;
   padding: 20px;
 }
