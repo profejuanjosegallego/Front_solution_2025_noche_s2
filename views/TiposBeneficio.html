@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficios para Estudiantes</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+</head>
+<body>
+    <header>
+        <h1>Beneficiosss para Estudiantes</h1>
+        <p>Selecciona un tipo de gráfico para ver la distribución de beneficios.</p>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button id="btnPie" class="active">Gráfico de Pastel</button>
+            <button id="btnBar">Gráfico de Barras</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="benefitsChart"></canvas>
+        </div>
+        <div class="legend-container" id="legend"></div>
+        <div id="icon-container" class="icon-container"></div>
+    </main>
+
+    <script src="../controllers/app.js"></script>
+</body>
+</html>

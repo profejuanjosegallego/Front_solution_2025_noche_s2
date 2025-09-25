@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "beneficio": "Descuentos en Transporte",
+    "cantidad": 350,
+    "icon": "fas fa-bus",
+    "color": "#FF6384"
+  },
+  {
+    "id": 2,
+    "beneficio": "Acceso a Bibliotecas Digitales",
+    "cantidad": 280,
+    "icon": "fas fa-book",
+    "color": "#36A2EB"
+  },
+  {
+    "id": 3,
+    "beneficio": "Subsidios de Comedor",
+    "cantidad": 210,
+    "icon": "fas fa-utensils",
+    "color": "#FFCE56"
+  },
+  {
+    "id": 4,
+    "beneficio": "Gimnasio y Actividades Deportivas",
+    "cantidad": 170,
+    "icon": "fas fa-dumbbell",
+    "color": "#4BC0C0"
+  },
+  {
+    "id": 5,
+    "beneficio": "Asesoría y Tutorías Académicas",
+    "cantidad": 120,
+    "icon": "fas fa-graduation-cap",
+    "color": "#9966FF"
+  }
+]
